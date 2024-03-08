@@ -227,7 +227,7 @@ function setupLevel(levelInfo){
                         if(localStorage.getItem('username') === null){
 
                             instructions.style.top = "25vh";
-                            instructions.innerHTML += `<p>Submit your score on the <a href="/">leaderboard</a>.</P>`;
+                            instructions.innerHTML += `<p>Submit your score on the <a href="/tradeoff">leaderboard</a>.</P>`;
                             // add a input field for user to enter their name
                             instructions.innerHTML += `<input type="text" id="name" placeholder="username">`;
                             // add a button to submit the score
@@ -243,7 +243,7 @@ function setupLevel(levelInfo){
 
                             window.saveScore(name, level).then(() => {
                                 instructions.innerHTML = `<p>Nice try! You messed up on level ${level}!</>`;
-                                instructions.innerHTML += `<p>You are ranked <span style="color: #ffc400">${window.rank}</span> on the <a href="/">leaderboard</a>!</p>`;
+                                instructions.innerHTML += `<p>You are ranked <span style="color: #ffc400">${window.rank}</span> on the <a href="/tradeoff">leaderboard</a>!</p>`;
                                 instructions.innerHTML += `<button onclick="startGame()">Play Again</button>`;
                     
                             });
@@ -278,7 +278,7 @@ const submitScore = () => {
 
 	window.saveScore(name, localStorage.getItem('level')).then(() => {
 		
-		instructions.innerHTML += `<p>You are ranked <span style="color: #ffc400">${window.rank}</span> on the <a href="/">leaderboard</a>!</p>`;
+		instructions.innerHTML += `<p>You are ranked <span style="color: #ffc400">${window.rank}</span> on the <a href="/tradeoff">leaderboard</a>!</p>`;
 		instructions.innerHTML += `<button onclick="startGame()">Play Again</button>`;
 
 	});
